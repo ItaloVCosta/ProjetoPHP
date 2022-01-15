@@ -1,0 +1,13 @@
+Deputados do mandato de 2019 
+http://dadosabertos.almg.gov.br/ws/legislaturas/19/deputados/situacao/1?formato=json
+
+Verbas indenizatorias
+http://dadosabertos.almg.gov.br/ws/prestacao_contas/verbas_indenizatorias/legislatura_atual/deputados/{id}/datas
+
+https://dadosabertos.almg.gov.br/ws/prestacao_contas/verbas_indenizatorias/legislatura_atual/deputados/12195/2019/2?formato=json
+
+http://dadosabertos.almg.gov.br/ws/prestacao_contas/verbas_indenizatorias/legislatura_atual/deputados/{id}/{ano}/{mes}
+
+midias
+
+http://dadosabertos.almg.gov.br/ws/deputados/[id]?formato=json
