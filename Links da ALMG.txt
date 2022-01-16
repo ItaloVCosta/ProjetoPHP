@@ -11,3 +11,6 @@ http://dadosabertos.almg.gov.br/ws/prestacao_contas/verbas_indenizatorias/legisl
 midias
 
 http://dadosabertos.almg.gov.br/ws/deputados/[id]?formato=json
+
+
+falar do uso de sync e assync e await, justificando o delay.
