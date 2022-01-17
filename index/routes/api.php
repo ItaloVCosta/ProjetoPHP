@@ -2,7 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\RedeSociaisController;
+use App\Http\Controllers\VerbasIndenizatoriaController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,8 +15,8 @@ use App\Http\Controllers\PostController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get("list", [PostController::class,'list']);
-Route::post("insert", [PostController::class,'insert']);
+Route::get("RedesSociais", [RedeSociaisController::class,'list']);
+Route::get("VerbaIndenizatoria", [VerbasIndenizatoriaController::class,'list']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

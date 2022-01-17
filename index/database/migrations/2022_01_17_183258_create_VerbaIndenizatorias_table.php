@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostsTable extends Migration
+class CreateVerbaIndenizatoriasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('verba_indenizatorias', function (Blueprint $table) {
             $table->id();
 
-            $table->string('title');
-            $table->string('slug');
-            $table->string('content')->nullable();
+            $table->string('Mes');
+            $table->string('NomeDeputado');
+            $table->string('Valor')->nullable();
 
-            $table->timestamps();
+            //$table->timestamps();
         });
     }
 
@@ -31,6 +31,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('VerbaIndenizatorias');
     }
 }
