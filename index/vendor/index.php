@@ -11,7 +11,7 @@ use \App\WebService\ALMG;
 //*********************************************************************************** */
 // Parte que solicita e organiza os dados das redes sociais
  
-/*   $deputados = ALMG::consultarDeputado();
+ $deputados = ALMG::consultarDeputado();
 
  $usoDasRedes = array(
     array("ID"=>0, "NOME"=>"Instagram",   "usuarios"=>0),
@@ -63,21 +63,21 @@ use \App\WebService\ALMG;
     }    
 } 
 
-print_r("Redes sociais e sua utilizacao:\n\n");
+//print_r("Redes sociais e sua utilizacao:\n\n");
 
 $columns = array_column($usoDasRedes, 'usuarios');
 array_multisort($columns, SORT_DESC, $usoDasRedes);
 
-for($i=0;$i<8;$i++)
+/* for($i=0;$i<8;$i++) // For para printar as redes sociais no console caso necessario
     print_r($usoDasRedes[$i]["NOME"].": ".$usoDasRedes[$i]["usuarios"]." usuarios\n"); 
-print_r("*************************************\n");  */
+print_r("*************************************\n");   */ 
  
 //*********************************************************************************** */
 
 //*********************************************************************************** */
 // Funcao que solicida e organiza os dados das verbas indenizatórias
 
-  /* function verbasdosDeputados($mes, $deputadoeId)
+   function verbasdosDeputados($mes, $deputadoeId)
 {
     foreach($deputadoeId as $value3)
     {   
@@ -99,69 +99,22 @@ print_r("*************************************\n");  */
 }  
 $meses=array("Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro");
 
-for($i=0;$i<=1;$i++)
+for($i=0;$i<=11;$i++)
     $verbasAno[]=array($meses[$i] => verbasdosDeputados($i+1,$deputadoeId));
-print_r($verbasAno); */
+
 //*********************************************************************************** */
 // Enviando para o banco de dados
 
-/* for($i=0;$i<8;$i++)
-    enviaDado::enviaRedesSociais($usoDasRedes[$i]["NOME"],$usoDasRedes[$i]["usuarios"]); */
-    //$teste=3000;
-    //enviaDado::enviaVerbas(1548,"Janeiro","Fulano",$teste);
-    $verbasAno[]=Array(
-        "Janeiro" => 
-        ( array(
-                array
-                    (
-                        'Nome' => 'Agostinho Patrus',
-                        'Id' => 15245,
-                        'Total Pedido' => 0,
-                    ),
-
-                array
-                    (
-                        'Nome' => 'Alencar da Silveira Jr',
-                        'Id' => 7752,
-                        'Total Pedido' => 0
-                    ),
-
-                array
-                    (
-                        'Nome' => 'Ana Paula Siqueira',
-                        'Id' => 19150,
-                        'Total Pedido' => 0
-                    ),
-
-                array
-                    (
-                        'Nome' => 'André Quintão',
-                        'Id' => 12195,
-                        'Total Pedido' => 0
-                    ),
-
-                array
-                    (
-                        'Nome' => 'Andréia de Jesus',
-                        'Id' => 26143,
-                        'Total Pedido' => 0
-                    ), 
-                )
-        )
-    ); 
+for($i=0;$i<8;$i++)
+    enviaDado::enviaRedesSociais($usoDasRedes[$i]["NOME"],$usoDasRedes[$i]["usuarios"]);
 
      foreach($verbasAno as $value5)
-    {
-        
-        print_r(key($value5));
+    {      
         foreach($value5 as $value6)
         {
-            
-            print_r($value6['Nome']);
-            print_r($value6['Id']);
-            print_r($value6['Total Pedido']);
-          
+            foreach($value6 as $value7)
+            {   
+                enviaDado::enviaVerbas($value7['Id'],key($value5),$value7['Nome'],$value7['Total Pedido']);
+            }
         }
-
-    
     }

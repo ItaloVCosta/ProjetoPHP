@@ -16,6 +16,7 @@ class CreateVerbaIndenizatoriasTable extends Migration
         Schema::create('verba_indenizatorias', function (Blueprint $table) {
             $table->id();
 
+            $table->string('idDeputado');
             $table->string('Mes');
             $table->string('NomeDeputado');
             $table->string('Valor')->nullable();

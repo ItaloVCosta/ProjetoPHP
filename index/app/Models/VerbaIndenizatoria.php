@@ -9,6 +9,7 @@ class VerbaIndenizatoria extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'idDeputado',
         'Mes',
         'NomeDeputado',
         'Valor'
