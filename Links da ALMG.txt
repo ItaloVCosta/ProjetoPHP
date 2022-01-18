@@ -12,9 +12,3 @@ midias
 
 http://dadosabertos.almg.gov.br/ws/deputados/[id]?formato=json
 
-
-falar do uso de sync e assync e await, justificando o delay.
-temq dar o migrate
-php artisan migrate
-
-O abriremos e utilizaremos o atalho "Ctrl + F" para buscar por pdo_sqlite com qualquer editor de texto adequado, e neste caso usaremos o PhpStorm. Com isso, encontraremos a linha ;extension=pdo_sqlite e bastará retirarmos o ; para salvarmos o arquivo com este mesmo nome.
